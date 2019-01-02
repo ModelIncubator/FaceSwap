@@ -1,12 +1,16 @@
 #! /usr/bin/env python
+import argparse
 import json
+from pathlib import Path
+
 import cv2
 import dlib
-import argparse
+
 
 ## Face and points detection
 def face_points_detection(img, bbox):
-    PREDICTOR_PATH = 'models/shape_predictor_68_face_landmarks.dat'
+    PREDICTOR_PATH = Path(__file__).resolve().parent / \
+        'models/shape_predictor_68_face_landmarks.dat'
     predictor = dlib.shape_predictor(PREDICTOR_PATH)
 
     # Get the landmarks/parts for the face in box d.
