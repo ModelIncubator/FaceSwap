@@ -9,8 +9,7 @@ import dlib
 
 ## Face and points detection
 def face_points_detection(img, bbox):
-    PREDICTOR_PATH = Path(__file__).resolve().parent / \
-        'models/shape_predictor_68_face_landmarks.dat'
+    PREDICTOR_PATH = str(Path(__file__).resolve().parent / 'models/shape_predictor_68_face_landmarks.dat')
     predictor = dlib.shape_predictor(PREDICTOR_PATH)
 
     # Get the landmarks/parts for the face in box d.
